@@ -26,6 +26,8 @@ a
 display: none;
 opacity: 0;
 pointer-events: auto;
+margin-bottom: 220rem;
+
 }
 
 .form-box
@@ -34,9 +36,10 @@ pointer-events: auto;
 	height:480px;
 	position:relative;
 	margin:2% auto;
-	background:rgba(0,0,0,0.3);
+	background:rgba(0, 0, 0, 0.3);
 	padding:10px;
-    overflow: hidden;
+    overflow:hidden;
+	margin-top: -40rem;
 }
 .button-box
 {
@@ -45,6 +48,7 @@ pointer-events: auto;
 	position:relative;
 	box-shadow: 0 0 20px 9px #ff61241f;
 	border-radius: 30px;
+
 }
 .toggle-btn
 {
@@ -88,7 +92,7 @@ pointer-events: auto;
 	border-left:0;
 	border-top:0;
 	border-right:0;
-	border-bottom: 1px solid #999;
+	border-bottom: 1px solid #777;
 	outline:none;
 	background: transparent;
 }
@@ -110,9 +114,9 @@ pointer-events: auto;
 }
 span
 {
-	color:#777;
+	color:#FFF;
 	font-size:12px;
-	bottom:68px;
+	bottom:220rem;
 	position:absolute;
 }
 #login

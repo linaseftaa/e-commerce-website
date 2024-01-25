@@ -43,6 +43,7 @@
         </div>
     </div>
     <script>
+        /*
         const formOpenBtn = document.querySelector("#form-open"),
         let login-page= document.querySelector('.login-page');
        login-page = document.querySelector(".login-page"),
@@ -54,7 +55,7 @@
        formCloseBtn.addEventListener("click",()=> login.classList.remove("show"))
        fasfauser.onclick = () =>{
         form-box.classList.toggle('active')
-}
+}*/
 
 
         var x=document.getElementById('login');
