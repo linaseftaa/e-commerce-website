@@ -163,7 +163,7 @@ if(isset($_SESSION['logged_in'])){
        formCloseBtn.addEventListener("click",()=> login.classList.remove("show"))
        fasfauser.onclick = () =>{
         form-box.classList.toggle('active')
-}
+}*/
 
 */
         var x=document.getElementById('login');

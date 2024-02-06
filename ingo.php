@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trendy Threads Boutique</title>
     <link rel="stylesheet" href="css/styleXX.css">
+    <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
@@ -26,9 +27,10 @@
             <div class="fas fa-bars" id="menu-bar"></div>
             <div class="fas fa-shopping-cart" id="shop-cart"></div>
             <div class="fas fa-search" id="search-bar"></div>
-           <a href="login.php" id="form-open"><div class="fas fa-user"id="form-open" id='login-form'onclick="document.getElementById('login-page').style.display='block'" style="width:auto;"></div></a> 
+           <!--<a href="login.php" id="form-open">--><div class="fas fa-user"id="form-open" 
+           id='login-form'onclick="document.getElementById('form-box').style.display='block'" style="width:auto;"></div>
         </div>
-
+       
         <div class="search-box">
             <input type="search" placeholder="search here">
         </div>
@@ -71,7 +73,7 @@
 
     </div>
     
-
+    
 <header>
       <div class="section__container header__container">
         <div class="header__content">
@@ -84,6 +86,32 @@
         </div>
       </div>
     </header>
+    <div id='login-form'class='login-page'>
+            <div class="form-box">
+                <div class='button-box'>
+                    <div id='btn'></div>
+                    <button type='button'onclick='login()'class='toggle-btn'>Log In</button>
+                    <button type='button'onclick='register()'class='toggle-btn'>Register</button>
+                </div>
+                <form id='login' class='input-group-login'>
+                    <input type='text'class='input-field'placeholder='Entre your email' required >
+		    <input type='password'class='input-field'placeholder='Enter your Password' required>
+		    <input type='checkbox'class='check-box'><span>Remember Password</span>
+		    <button type='submit'class='submit-btn'>Log in</button>
+		 </form>
+		 <form id='register' class='input-group-register'>
+		     <input type='text'class='input-field'placeholder='First Name' required>
+		     <input type='text'class='input-field'placeholder='Last Name ' required>
+		     <input type='email'class='input-field'placeholder='Email Id' required>
+		     <input type='password'class='input-field'placeholder='Enter Password' required>
+		     <input type='password'class='input-field'placeholder='Confirm Password'  required>
+		     <input type='checkbox'class='check-box'><span>I agree to the terms and                                                   conditions</span>
+                    <button type='submit'class='submit-btn'>Register</button>
+	         </form>
+            </div>
+        </div>
+    </div>
+    
     <section class="section__container collection__container">
       <img src="img/imo.avif" alt="collection" />
       <div class="collection__content">
@@ -203,7 +231,7 @@
             <div class="news__details">
               <p>
                 FASHION <i class="ri-checkbox-blank-circle-fill"></i>
-                <span>JAMES SIMSON</span>
+               
                 <i class="ri-checkbox-blank-circle-fill"></i> FEB 2, 2019
               </p>
               <h4>Seasonal Trends</h4>
@@ -221,7 +249,7 @@
             <div class="news__details">
               <p>
                 TRENDS <i class="ri-checkbox-blank-circle-fill"></i>
-                <span>JAMES SIMSON</span>
+                
                 <i class="ri-checkbox-blank-circle-fill"></i> APR 15, 2019
               </p>
               <h4>Fashion Tips and Advice</h4>
@@ -238,7 +266,7 @@
             <div class="news__details">
               <p>
                 STYLE <i class="ri-checkbox-blank-circle-fill"></i>
-                <span>JAMES SIMSON</span>
+                
                 <i class="ri-checkbox-blank-circle-fill"></i> JUL 22, 2019
               </p>
               <h4>Sustainable Fashion</h4>
@@ -337,6 +365,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="script.js"></script>
+    <script src="login.js"></script>
   </body>
 </html>
 

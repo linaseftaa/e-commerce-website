@@ -4,11 +4,25 @@ let shop = document.querySelector('#shop-cart');
 let shopcart = document.querySelector('.shopping-cart');
 let menubar = document.querySelector('#menu-bar');
 let mynav = document.querySelector('.navbar');
+let formbox = document.querySelector('.form-box');
+const formOpenBtn = document.querySelector("#form-open"),
+
+formBox = document.querySelector(".form-box"),
+formColseBtn = document.querySelector(".form-box"),
+fasfauser = document.querySelector("#fas fa-user"),
+pWShowHide = document.querySelector(".input-field");
+formOpenBtn.addEventListener("click",()=> login.classList.add("show"))
+formCloseBtn.addEventListener("click",()=> login.classList.remove("show"))
+
+fasfauser.onclick = () =>{
+form-box.classList.toggle('active')
+}
 
 
 
-
-
+formopen.onclick = () =>{
+  formbox.classList.toggle('active')
+}
 
 searchbar.onclick = () =>{
     searchbox.classList.toggle('active')
@@ -55,3 +69,4 @@ $('.slides').slick({
      
     ]
   });
+ 
