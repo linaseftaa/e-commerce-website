@@ -1,47 +1,69 @@
 <?php
 session_start();
  $con = mysqli_connect("localhost","root","","clothes");
-
-if(isset($_SESSION['logged_in'])){
+ if(isset($_SESSION['logged_in'])){
     header('location:account.php');
     exit;
 }
 
-
- if(isset($_POST['login_btn'])){
+if(isset($_POST['register'])){
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
     $email = $_POST['email'];
-    $password = md5($_POST['password']);
-   $stmt= $con->prepare("SELECT user_id, first_name,last_name,email,password FROM user WHERE email=? AND password=? LIMIT 1");
- $stmt->bind_param('ss',$email,$password);
+    $password = $_POST['password'];
+    $confirmPassword =$_POST['confirmPassword'];
+    //if password dont match
+    if($password !== $confirmPassword){
+        header('location:register.php?error=password dont match');
+    }
+    //if passwors is less then 6 char
+else if (strlen($password < 6)) {
+    header('location:register.php?error=password must be at least 6 charachters');
+    //if is no error 
+}else{
+//check whether there is a user with this email or not 
+$stmt1=$con->prepare("SELECT count(*) FROM user where email=?");
+$stmt1->bind_param('s',$email);
+$stmt1->execute();
+$stmt1->bind_result($num_rows);
+$stmt1->store_result();
+$stmt1->fetch();
+//if there is a user alerfy register with this email
+if($num_rows != 0){
+    header('location:register.php?error=user with this email already exists');
+    //if no user register with this email beform
+}else{
+//create a new user
+$stmt=$con->prepare("INSERT INTO user(first_name,last_name,email,password)VALUES (?,?,?,?)");
+
+$stmt->bind_param('ssss',$firstname,$lastname,$email,md5($password));
+//if account is created succsesfully
+
+
+
  if($stmt->execute()){
-    $stmt->bind_result($user_id,$first_name,$last_name,$email,$password);
-    $stmt->store_result();
-    if($stmt->num_rows() == 1){
-     $row=$stmt->fetch();
-     $_SESSION['user_id'] = $user_id;
-     $_SESSION['first_name'] = $first_name;
-     $_SESSION['lasr_name'] = $last_name; 
-      $_SESSION['email'] = $email;
-      $_SESSION['logged_in'] = $true;
-      header('location:account.php?message=logged in sucessfully');
-    }else{
-        header('location:login.php?error=could not verify your account');   
-    }
-    }else {
-       header('location: login.php?error=something went wrong');
+$_SESSION['email']=$email;
+$_SESSION['first_name'] = $firstname;
+$_SESSION['last_name'] = $lastname;
+$_SESSION['logged_in'] = true;
+header('location:register.php?message=you registered sucssfully');
+//account could not created 
+}else{
+header('location:register.php?error=could not creat an account at the momente');
+}
 
-    }
- }
-
-
-
-
-
-
+}
+}
+}
+//if user has already registered then take user to account page
 
 
 ?>
 
+   
+   
+   
+   
 
 
 
@@ -70,7 +92,7 @@ if(isset($_SESSION['logged_in'])){
         <nav class="navbar">
         <a href="ingo.php">Home</a>
         <a href="clothes.php">clothes</a>
-        <a href="about.php">About</a>
+        <a href="#">Blog</a>
        <a href="#">Contact</a>
         </nav>
         <div class="icons">
@@ -117,7 +139,7 @@ if(isset($_SESSION['logged_in'])){
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
         <div id='login-form'class='login-page'>
             <div class="form-box">
                 <div class='button-box'>
@@ -125,18 +147,14 @@ if(isset($_SESSION['logged_in'])){
                     <button type='button'onclick='login()'class='toggle-btn'>Log In</button>
                     <button type='button'onclick='register()'class='toggle-btn'>Register</button>
                 </div>
-                <form id='login' class='input-group-login' method="POST" action="login.php">
-                <p style="color:red;" class="text-center"><?php if(isset($_GET['error'])){echo $_GET['error'];}?></p>
-                    <input type='text'class='input-field'name="email" placeholder=' Enter Your Email' required >
-		    <input type='password'class='input-field'name="password" placeholder='Enter Password' required>
+                <form id='login' class='input-group-login'>
+                <p style="color:red;"><?php if(isset($_GET['error'])){echo $_GET['error'];}?></p>
+                    <input type='text'class='input-field'placeholder='Email Id' required >
+		    <input type='password'class='input-field'placeholder='Enter Password' required>
 		    <input type='checkbox'class='check-box'><span>Remember Password</span>
-		    <button type='submit'class='submit-btn' name="login_btn">Log in</button>
-            <div class="form-group">
-                <a href="register.php" id="register-url" class="btn">Dont't have account ? Register</a>
-
-            </div>
+		    <button type='submit'class='submit-btn'>Log in</button>
 		 </form>
-		 <form id='register' class='input-group-register' method="POST" action="register.php">
+         <form id='register' class='input-group-register' method="POST" action="register.php">
          <p style="color:red;"><?php if(isset($_GET['error'])){echo $_GET['error'];}?></p>
 		     <input type='text'class='input-field'name="firstname" placeholder='First Name' required>
 		     <input type='text'class='input-field'name="lastname" placeholder='Last Name ' required>
@@ -145,6 +163,9 @@ if(isset($_SESSION['logged_in'])){
 		     <input type='password'class='input-field'name="confirmPassword" placeholder='Confirm your Password'  required>
 		     <input type='checkbox'class='check-box'><span>I agree to the terms and                                                   conditions</span>
                     <button type='submit'class='submit-btn' id="regester-btn" name="register">Register</button>
+                    <div class="form-groupe">
+                        <a id="login-url" href="login.php" class="btn">Do you have an account ? Login</a>
+                    </div>
 	         </form>
             </div>
         </div>

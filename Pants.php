@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trendy Threads Boutique</title>
     <link rel="stylesheet" href="css/shop.css">
-    <!--link rel="stylesheet" href="cart.css"-->
+    <link rel="stylesheet" href="styl.css">
      <link rel="stylesheet" href="shop.css">
-   <link rel="stylesheet" href="styl.css">
-   <link rel="stylesheet" href="css/styleXX.css">
+     <link rel="stylesheet" href="cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
@@ -23,7 +22,7 @@
         <nav class="navbar">
         <a href="ingo.php">Home</a>
         <a href="clothes.php">clothes</a>
-        <a href="about.php">About</a>
+        <a href="#">Blog</a>
        <a href="#">Contact</a>
         </nav>
         <div class="icons">
@@ -70,15 +69,14 @@
                 </div>
             </div>
         </div>
-</div>
+
         <!-- shoping cart ended  -->
 
     </div class="shopy">
     
-      <div class="musthave__nav">
+    <div class="musthave__nav">
         <a href="clothes.php">ALL</a>
-
-        <a href="Dresses.php">Dresses</a>
+        <a href="Gardigants.php">Dresses</a>
         <a href="Sweaters.php">Sweaters</a>
         <a href="Pants.php">Pants</a>
         <a href="Jackets.php">Jackets</a>
@@ -88,9 +86,14 @@
       <?php 
                  //Nous allons afficher tous les produits ajouté :
                    //connexion à la base de données
-                   $con = mysqli_connect("localhost","root","","clothes");
-                   
-                   $req3 = mysqli_query($con , "SELECT * FROM prod");
+                   $con = mysqli_connect("localhost","root","","colthes");
+                  // $req1 = mysqli_query($con , "SELECT nom_cat FROM categories WHERE nom_cat = 'Pant'");
+                // while( $row = mysqli_fetch_assoc($req1)){
+                  // $categorie = $row['nom_cat']; 
+
+                   $req3 = mysqli_query($con, "SELECT * FROM prod WHERE categorie = 'Pant'");
+
+                  
                    if(mysqli_num_rows($req3) == 0){
                       //si la base de donnée ne contient aucun produit , alors affichons :
                       echo " Aucun produit trouvé";
@@ -111,9 +114,8 @@
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
                                              </div>
-                                             <a href="Single.php?product_id='.$row['id'].'"><i class="fas fa-shopping-cart shop"></i></a>
                                         </div>
-                                      
+                                      <a href="single.php"><i class="fas fa-shopping-cart cart"></i></a>
                                     </div>
                             </div>    
                            ';
@@ -127,17 +129,6 @@
     <a href="#">2</a>
     <a href="#"><i class="fas fa-long-arrow-alt-right"></i></a>
 </section>
-
-
-        <a href="#">Gardigants</a>
-        <a href="#">Sweaters</a>
-        <a href="#">Woll pants</a>
-        <a href="#">Jachet</a>
-      </div>
-
-     
-
-
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

@@ -16,7 +16,7 @@
                 <?php 
                  //Nous allons afficher tous les produits ajouté :
                    //connexion à la base de données
-                   $con = mysqli_connect("localhost","root","lina","clothes");
+                   $con = mysqli_connect("localhost","root","","clothes");
                    $req3 = mysqli_query($con , "SELECT * FROM prod");
                    if(mysqli_num_rows($req3) == 0){
                       //si la base de donnée ne contient aucun produit , alors affichons :

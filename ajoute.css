@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', 'sans-serif';
+}
+body{
+    background-color:beige;
+}
+.input_add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.input_add form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    background-color: whitesmoke;
+    padding: 20px;
+    box-shadow: 0 0 50px  rgba(0,0,0,0,4);
+    border-radius: 6px;
+}
+.input_add form input[type = "text"] {
+    border: 1px solid rgba(0,0,0,0,6);
+    border-radius: 6px;
+    outline: 0;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+textarea {
+    border: 1px solid rgba(0,0,0,0,6);
+    border-radius: 6px;
+    outline: 0;
+    padding: 5px;
+    margin-bottom: 10px;
+    resize: none;
+}
+.input_add form input[type = "file"] {
+    margin-bottom: 15px;
+}
+.input_add form input[type = "submit"] {
+    padding: 5px 8px;
+    border: 0;
+    outline: 0;
+    background-color: rgba(184, 173, 11, 0.421);
+    color: black;
+    border-radius: 6px;
+    font-size: 14px;
+}

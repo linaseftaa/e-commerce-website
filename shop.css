@@ -1,0 +1,41 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan',sans-serif;
+}
+#pagination {
+   text-align: center;
+}
+
+#pagination a{
+   text-decoration: none;
+   background-color: #088178;
+   padding: 15px 20px;
+   border-radius: 4px;
+   color: #fff;
+   font-weight: 600;
+}
+
+#pagination a i{
+   font-size: 16px;
+   font-weight: 600;
+   
+}
+#product1 .pro .shop{
+   width: 40px;
+   height: 40px;
+   line-height: 40px;
+   border-radius: 50px;
+   background-color: #e8f6ea;
+   font-weight: 500;
+   color: #088178;
+   border: 1px solid #cce7d0;
+   position: absolute;
+   bottom: 20px;
+   right: 10px;
+}
+
+
+

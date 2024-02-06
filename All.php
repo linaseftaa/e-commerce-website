@@ -5,11 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trendy Threads Boutique</title>
-    <link rel="stylesheet" href="css/shop.css">
-    <!--link rel="stylesheet" href="cart.css"-->
-     <link rel="stylesheet" href="shop.css">
-   <link rel="stylesheet" href="styl.css">
-   <link rel="stylesheet" href="css/styleXX.css">
+  <link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="shop.css">
+    <link rel="stylesheet" href="styl.css">
+    <link rel="stylesheet" href="css/styleXX.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
@@ -23,7 +22,7 @@
         <nav class="navbar">
         <a href="ingo.php">Home</a>
         <a href="clothes.php">clothes</a>
-        <a href="about.php">About</a>
+        <a href="#">Blog</a>
        <a href="#">Contact</a>
         </nav>
         <div class="icons">
@@ -70,19 +69,17 @@
                 </div>
             </div>
         </div>
-</div>
+
         <!-- shoping cart ended  -->
 
     </div class="shopy">
     
       <div class="musthave__nav">
-        <a href="clothes.php">ALL</a>
-
-        <a href="Dresses.php">Dresses</a>
+        <a href="All.php">ALL</a>
+        <a href="Gardigants.php">Gardigants</a>
         <a href="Sweaters.php">Sweaters</a>
-        <a href="Pants.php">Pants</a>
-        <a href="Jackets.php">Jackets</a>
-        <a href="Coats.php">Coats</a>
+        <a href="Woll pants.php">Woll pants</a>
+        <a href="Jachet.php">Jachet</a>
       </div>
       <section id="product1"class="section-p1">
       <?php 
@@ -103,7 +100,7 @@
                                         <img src="img/'.$row['image'].'" alt=""> 
                                         <div class="des">
                                            <strong><p class="titre">'.$row['titre'].'</p></strong>
-                                           <p class="prix">'.$row['prix'].'</p>
+                                           <p class="prix">'.$row['prix'].'</p><p class="descrip">'.$row['descrip'].'</p>
                                              <div class="star">
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
@@ -111,9 +108,8 @@
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
                                              </div>
-                                             <a href="Single.php?product_id='.$row['id'].'"><i class="fas fa-shopping-cart shop"></i></a>
                                         </div>
-                                      
+                                      <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
                                     </div>
                             </div>    
                            ';
@@ -125,19 +121,8 @@
      <section id="pagination" class="section-p1">
     <a href="#">1</a>
     <a href="#">2</a>
-    <a href="#"><i class="fas fa-long-arrow-alt-right"></i></a>
+    <a href="#"><i class="fa fa-long-arrow-alt-right"></i></a>
 </section>
-
-
-        <a href="#">Gardigants</a>
-        <a href="#">Sweaters</a>
-        <a href="#">Woll pants</a>
-        <a href="#">Jachet</a>
-      </div>
-
-     
-
-
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

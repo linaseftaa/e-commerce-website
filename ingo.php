@@ -19,7 +19,7 @@
         <nav class="navbar">
         <a href="ingo.php">Home</a>
         <a href="clothes.php">clothes</a>
-        <a href="#">Blog</a>
+        <a href="about.php">About</a>
        <a href="#">Contact</a>
         </nav>
         <div class="icons">
@@ -137,7 +137,7 @@
           <p><del>$45.00</del> $75.00</p>
         </div>
         <div class="musthave__card">
-          <img src="img/img3.jpg" alt="must have" />
+          <img src="img/img3.jpg" alt="must have"/>
           <h4>Summer Floral Bhemian With Button Down Swing Midi Dress</h4>
           <p><del>$45.00</del> $75.00</p>
         </div>
